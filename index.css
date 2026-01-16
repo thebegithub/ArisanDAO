@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', sans-serif;
+
+  --color-surface: #f8fafc;
+
+  --color-lisk-50: #f0f9ff;
+  --color-lisk-100: #e0f2fe;
+  --color-lisk-200: #bae6fd;
+  --color-lisk-300: #7dd3fc;
+  --color-lisk-400: #38bdf8;
+  --color-lisk-500: #0ea5e9;
+  --color-lisk-600: #0284c7;
+  --color-lisk-700: #0369a1;
+  --color-lisk-800: #075985;
+  --color-lisk-900: #0c4a6e;
+}
+
+/* Global Styles */
+body {
+    background-color: var(--color-surface);
+    color: #0f172a;
+    font-family: var(--font-sans);
+
+    /* Minimalist Crypto Grid Background */
+    background-image:
+        radial-gradient(#e2e8f0 1px, transparent 1px),
+        radial-gradient(#e2e8f0 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-position: 0 0, 20px 20px;
+}
+
+/* Utilities for Glassmorphism (Standard CSS alternative to @apply) */
+.glass-panel {
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 10px 15px -3px rgba(148, 163, 184, 0.2);
+}
+
+.glass-card {
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Animations */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Text Gradient Helper */
+.text-gradient {
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(to right, #0284c7, #2563eb);
+}
